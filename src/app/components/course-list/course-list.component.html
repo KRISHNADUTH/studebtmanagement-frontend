@@ -1,0 +1,14 @@
+<div *ngIf="loading; else courseList">
+    <h1>Loading courses...</h1> <!-- Show loading message -->
+</div>
+<ng-template #courseList>
+    <div *ngIf="availableCourses.length; else noCourseAvailable">
+        <h1>Available courses for enrollment.</h1>
+        <ul>
+            <li *ngFor="let course of availableCourses"> {{course.courseName}} <br> </li>
+        </ul>
+    </div>
+    <ng-template #noCourseAvailable>
+        <h1>No courses available for enrollment.</h1>
+    </ng-template>
+</ng-template>

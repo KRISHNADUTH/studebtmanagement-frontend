@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar With Bootstrap</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="home.component.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <aside id="sidebar">
+        <div class="d-flex">
+          <button class="toggle-btn" type="button">
+            <i class="lni lni-grid-alt"></i>
+          </button>
+          <div class="sidebar-logo">
+            <a href="#">Welcome</a>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a
+              href="#"
+              class="sidebar-link collapsed has-dropdown"
+              data-bs-toggle="collapse"
+              data-bs-target="#auth"
+              aria-expanded="false"
+              aria-controls="auth"
+            >
+              <i class="lni lni-protection"></i>
+              <span>Admin</span>
+            </a>
+            <ul
+              id="auth"
+              class="sidebar-dropdown list-unstyled collapse"
+              data-bs-parent="#sidebar"
+            >
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">Enroll Student</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">Add Course</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a
+              href="#"
+              class="sidebar-link collapsed has-dropdown"
+              data-bs-toggle="collapse"
+              data-bs-target="#multi"
+              aria-expanded="false"
+              aria-controls="multi"
+            >
+              <i class="lni lni-layout"></i>
+              <span>Requirements</span>
+            </a>
+            <ul
+              id="multi"
+              class="sidebar-dropdown list-unstyled collapse"
+              data-bs-parent="#sidebar"
+            >
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link"
+                  >Find the Nth Student by <br />
+                  Enrollment Date with the <br />
+                  Highest Pending Fee</a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link"
+                  >Students Who Have Not Paid <br />
+                  Any Fees in the Last Year but<br />
+                  Have Enrolled in Multiple<br />
+                  Courses</a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link"
+                  >Get the Average Fee Collected<br />
+                  Per Student for Each Enrollment<br />
+                  Batch</a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link"
+                  >Top 5 Students with the Longest<br />
+                  Delinquent Fee Payment History</a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link"
+                  >Students Who Have Enrolled in<br />
+                  All Available Courses but Have <br />Not Paid Their Fees</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <div class="main p-3">
+        <div class="text-center">
+          <div>
+            <h1>Welcome to the student Management App</h1>
+            <button [routerLink]="['/create-course']">Add new Course</button>
+            <button [routerLink]="['/create-student']">Enroll a student</button>
+            <button>View enrollments</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="home.component.ts"></script>
+  </body>
+</html>

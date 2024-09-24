@@ -1,0 +1,17 @@
+<button (click)="getAllCourse()">Show available courses</button>
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+    <div>
+        <div *ngIf="courseForm.get('courseName')?.invalid && courseForm.get('courseName')?.touched">Course name can't be
+            empty</div>
+        <label for="courseName">Course name</label>
+        <input id="courseName" type="text" formControlName="courseName">
+    </div>
+    <div>
+        <div *ngIf="courseForm.get('courseFee')?.invalid && courseForm.get('courseFee')?.touched">Course fee can't be
+            null</div>
+        <label for="courseFee">Course fee</label>
+        <input id="courseFee" type="number" oninput="this.value = this.value.replace(/-/g, '')"
+            formControlName="courseFee">
+    </div>
+    <button type="submit" [disabled]="courseForm.invalid">Submit</button>
+</form>
